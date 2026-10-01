@@ -160,6 +160,8 @@ details p { padding-top: 14px; }
         <li>Your PDFs, scans, notes and reading progress stay in local app storage. We do not upload them to our servers.</li>
         <li>No app account is required. The app has no ads or cross-app advertising tracking.</li>
         <li>Purchases use the store and RevenueCat, which process purchase records, identifiers and purchase-screen interactions.</li>
+        <li>Optional app usage and crash reporting use Google Firebase. You control each separately in Settings; both start off.</li>
+        <li>Revopush delivers compatible app updates and processes technical update information.</li>
         <li>Contacting support shares the information you send. Visiting the hosted website shares request information with GitHub.</li>
       </ul>
     </div>
@@ -191,40 +193,53 @@ details p { padding-top: 14px; }
       <h2>4. Purchases and purchase-screen reporting</h2>
       <p>Where purchases are available, Apple or Google Play handles payment and RevenueCat helps validate purchases, restore access and manage subscriptions. Billing requests can include an automatically generated app-user identifier, receipt/transaction or purchase-token information, products, subscription status and store/app/device context, such as versions and language. On iOS, RevenueCat also receives Apple’s identifier for vendor (IDFV) when available. Network services can process the connection’s IP address.</p>
       <p>RevenueCat purchase screens report impressions, dismissals and purchase interactions. This information supports paid access, fraud prevention and purchase-screen performance reporting. An anonymous app-user identifier does not mean that no data leaves the device.</p>
-      <p>We do not send RevenueCat your PDFs, document titles, annotations or reading history, and we do not receive your payment-card details. We do not sell personal information or use it for cross-app advertising tracking. We do not add a separate advertising or general reading-activity analytics service.</p>
+      <p>We do not send RevenueCat your PDFs, document titles, annotations or reading history, and we do not receive your payment-card details. We do not sell personal information or use it for cross-app advertising tracking.</p>
       <p>When a provider processes personal information on our behalf, we require protection consistent with this policy and applicable data-protection requirements, and use limited to the relevant service purposes.</p>
       <p>See <a href="https://www.apple.com/legal/privacy/">Apple’s privacy policy</a>, <a href="https://policies.google.com/privacy">Google’s privacy policy</a> and <a href="https://www.revenuecat.com/privacy">RevenueCat’s privacy policy</a>. Contact us for help with billing-data requests. Removing local app data does not cancel a subscription or automatically delete store or RevenueCat records.</p>
     </section>
+    <section id="optional-reporting">
+      <h2>5. Optional app usage and crash reports</h2>
+      <p>Settings offers separate choices to share app usage through Google Analytics for Firebase and technical crash reports through Firebase Crashlytics. Both are off by default. Enabling either is optional and does not unlock or restrict reading features. Turn an option off in Settings to stop its future reporting.</p>
+      <p>When app usage sharing is enabled, Firebase processes app-instance identifiers, fixed screen categories, automatically collected app activity (such as sessions, engagement and supported purchase events), app and device versions, language, and approximate regional information inferred from network information. Our screen events contain no document titles, file locations, search text, notes, highlights or PDF content. We do not assign an account ID or join this information to your RevenueCat customer identity.</p>
+      <p>When crash reporting is enabled, Firebase processes installation identifiers, app/device and operating-system details, crash times, stack traces, exception information and diagnostic context to help us identify failures. Our own JavaScript error reports use fixed error categories and reduced source locations. Technical diagnostics can contain error information produced by the operating system or other libraries; the app does not attach your PDFs or library to reports.</p>
+      <p>Firebase Analytics is configured without Apple advertising-identifier support. Advertising ID collection, advertising consent, ad personalization and ad-network attribution are disabled. Firebase’s vendor-identifier collection is also disabled. These services are used for app improvement and reliability, not advertising or tracking you across other companies’ apps and websites. Firebase still uses its own app or installation identifiers; this is not a claim that no data is collected.</p>
+      <p>Turning usage sharing off resets local Analytics data. Turning crash reporting off requests deletion of unsent crash reports. Information already received by the service is handled under the applicable retention settings and provider policies; contact us about access or deletion requests. See <a href="https://firebase.google.com/support/privacy">Firebase’s privacy and security information</a> and <a href="https://policies.google.com/privacy">Google’s privacy policy</a>.</p>
+    </section>
+    <section id="app-updates">
+      <h2>6. App updates</h2>
+      <p>Revopush checks for and delivers compatible updates to the app’s React Native code and assets. Update requests can include an installation or client identifier, app and build version, platform, update label or package hash, download and installation status, rollback status and network information such as IP address. On iOS, the SDK uses Apple’s identifier for vendor (IDFV) for its client identifier. We use this information to deliver the correct update and assess installation reliability, not for advertising.</p>
+      <p>Update requests do not include your PDFs, notes, document titles or reading history. Downloaded updates apply on a later app restart; a failed or unavailable update check does not prevent local reading. Native feature and SDK changes require a new store build. See <a href="https://revopush.org/privacy">Revopush’s privacy policy</a>.</p>
+    </section>
     <section id="support-messages">
-      <h2>5. Email support</h2>
+      <h2>7. Email support</h2>
       <p>When you email <a href="mailto:dev.pgsoftwarelabs@gmail.com">dev.pgsoftwarelabs@gmail.com</a>, we receive your email address, sender name, message and chosen attachments. We use them to respond, investigate the issue and maintain relevant support records. Your email provider and our provider, Gmail, process delivery and storage.</p>
       <p>Send only what is needed to explain the issue. Avoid passwords, identity documents and sensitive PDFs; a description and redacted screenshot are usually enough. Support information is not sold or used for advertising. Relevant information may be disclosed where legally required or reasonably necessary to protect legal rights and security.</p>
     </section>
     <section id="website">
-      <h2>6. Website hosting</h2>
+      <h2>8. Website hosting</h2>
       <p>These policy and support pages are hosted on GitHub Pages. When you visit the hosted site, GitHub receives the request and logs visitors’ IP addresses for security, even if they are not signed in. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub’s privacy statement</a>.</p>
       <p>The pages contain no analytics scripts, advertising pixels, remote embedded media, contact forms or cookies set by us. External links and email open services with their own privacy practices. Your PDFs and app library are not sent to this website.</p>
     </section>
     <section id="retention">
-      <h2>7. Storage, retention and deletion</h2>
+      <h2>9. Storage, retention and deletion</h2>
       <p>Local information remains until removed by an available app control, clearing app storage on Android or deleting the app. This can remove reading records, notes, scans, indexes and app-owned files. Offloading an iOS app can preserve documents and data; it differs from deleting it. Temporary caches may be removed sooner by the operating system.</p>
       <p>Original provider files and independent copies or backups remain separate. Android disables standard app backup, though manufacturers and file providers may have separate transfer or backup behavior. Durable iOS imports, reading records and recoverable scan drafts are eligible for normal device backup; temporary import staging is excluded. Manage backups through your device or provider. Keep independent copies of important documents and notes.</p>
       <p>The iOS purchase-verification cache uses device-only Keychain storage without app-enabled iCloud synchronization. It may remain after app deletion. Store purchase history and trial eligibility are separate; reinstalling does not reset them.</p>
-      <p>We retain support messages for as long as needed to resolve requests, maintain relevant support history, address disputes and meet legal obligations. Billing and hosting records follow the providers’ applicable retention practices and legal obligations. Contact us to request deletion of information we hold; we will explain any information that must be retained. We cannot remotely access or erase a library held only on your device. There is no app account to delete.</p>
+      <p>We retain support messages for as long as needed to resolve requests, maintain relevant support history, address disputes and meet legal obligations. Billing, optional usage and diagnostic reports, update records and hosting records follow the relevant service’s configured retention practices and legal obligations. Contact us to request deletion of information we hold; we will explain any information that must be retained. We cannot remotely access or erase a library held only on your device. There is no app account to delete.</p>
     </section>
     <section id="rights">
-      <h2>8. Your choices and rights</h2>
+      <h2>10. Your choices and rights</h2>
       <p>You choose files to import, whether to grant camera permission, whether to purchase and what to send to support. Depending on where you live, you may have rights to access, correct, delete or obtain a copy of personal information, restrict or object to processing, withdraw consent where processing relies on it, or complain to a data-protection authority.</p>
       <p>Email <a href="mailto:dev.pgsoftwarelabs@gmail.com">dev.pgsoftwarelabs@gmail.com</a> to make a request. We may need proportionate information to verify it and will respond as required by applicable law. Withdrawing consent does not affect earlier lawful processing.</p>
-      <p>Where legal-basis rules apply, we use purchase information to provide requested paid features, support correspondence to respond to your requests, and necessary records to meet legal obligations. Security and purchase-screen reporting support our legitimate interests in operating the service, subject to your rights. We obtain consent where required. Providers may process information outside your country; their privacy notices describe processing locations and transfer safeguards. Applicable data-protection requirements continue to apply to information we handle.</p>
+      <p>Where legal-basis rules apply, we use purchase information to provide requested paid features, support correspondence to respond to your requests, and necessary records to meet legal obligations. Optional Firebase usage and crash reporting depend on your choice in Settings, which you may withdraw there. Security, compatible updates and purchase-screen reporting support our legitimate interests in operating the service, subject to your rights. We obtain consent where required. Providers may process information outside your country; their privacy notices describe processing locations and transfer safeguards. Applicable data-protection requirements continue to apply to information we handle.</p>
     </section>
     <section id="security">
-      <h2>9. Security and children’s information</h2>
+      <h2>11. Security and children’s information</h2>
       <p>The app uses operating-system storage protections. On iOS, durable files are protected until the first device unlock after restart. Protect your device and backups with appropriate security settings. No storage or transmission method is guaranteed completely secure.</p>
       <p>The app is a general-purpose document reader. If you believe a child sent personal information to support without authorization required by law, contact us so we can review and remove it where appropriate. Children’s purchases remain subject to store family and approval controls.</p>
     </section>
     <section id="updates">
-      <h2>10. Changes and contact</h2>
+      <h2>12. Changes and contact</h2>
       <p>We will update this policy and its date when practices change, and provide any notice or consent process required by law for material changes. Contact PG Software Labs at <a href="mailto:dev.pgsoftwarelabs@gmail.com">dev.pgsoftwarelabs@gmail.com</a> with questions.</p>
     </section>
   </article>
@@ -235,6 +250,8 @@ details p { padding-top: 14px; }
       <a href="#device-data">Documents &amp; reading data</a>
       <a href="#permissions">Camera &amp; read-aloud</a>
       <a href="#purchases">Purchases &amp; reporting</a>
+      <a href="#optional-reporting">Optional usage &amp; crash reports</a>
+      <a href="#app-updates">App updates</a>
       <a href="#support-messages">Email support</a>
       <a href="#website">Website hosting</a>
       <a href="#retention">Retention &amp; deletion</a>
