@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173e33">
+  <meta name="description" content="Privacy, terms, and help for your hands-free PDF reader.">
+
+<link rel="canonical" href="https://mohitcol0562.github.io/pdf-scrollpacer-site/">
+  <title>Help &amp; information · PDF Scrollpacer</title>
+  <style>:root {
+  color-scheme: light;
+  --paper: #f7f3e9;
+  --surface: #fdfbf6;
+  --forest: #173e33;
+  --ink: #243c33;
+  --muted: #536358;
+  --line: #d6ddd1;
+  --soft-green: #e8eddf;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: 24px; }
+body { margin: 0; background: var(--paper); color: var(--ink); line-height: 1.7; }
+a { color: var(--forest); text-underline-offset: 4px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, summary:focus-visible { outline: 3px solid #8b5229; outline-offset: 5px; border-radius: 3px; }
+.skip-link { position: absolute; top: 12px; left: 16px; padding: 10px 18px; background: var(--forest); color: white; z-index: 2; transform: translateY(-160%); }
+.skip-link:focus { transform: translateY(0); }
+.site-shell { width: min(1040px, calc(100% - 64px)); margin: 0 auto; }
+.site-header { min-height: 114px; display: flex; gap: 24px; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); }
+.brand { display: inline-flex; align-items: center; gap: 12px; font-size: 23px; font-weight: 650; letter-spacing: -.8px; text-decoration: none; }
+.brand-mark { width: 40px; height: 40px; flex: none; color: var(--forest); }
+.main-nav { display: flex; gap: 8px; flex-wrap: wrap; }
+.main-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 7px 15px; font-size: 14px; font-weight: 550; text-decoration: none; border-radius: 30px; }
+.main-nav a:hover, .main-nav a[aria-current="page"] { background: var(--soft-green); }
+main { padding-top: 30px; padding-bottom: 80px; }
+.draft-notice { display: flex; gap: 9px; align-items: center; width: fit-content; max-width: 100%; border: 1px solid #d8cbb0; background: #f5eddc; padding: 5px 12px; border-radius: 5px; color: #645133; font-size: 12px; }
+.status-dot { width: 6px; height: 6px; flex: none; background: #947042; border-radius: 50%; }
+.page-heading { margin-top: 44px; max-width: 760px; margin-bottom: 46px; }
+.eyebrow { margin: 0 0 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; font-size: 11px; font-weight: 650; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; color: var(--forest); }
+h1 { font-size: clamp(38px, 6vw, 60px); line-height: 1.12; letter-spacing: -2px; margin-bottom: 20px; }
+h2 { font-size: 28px; line-height: 1.3; letter-spacing: -.6px; margin-bottom: 14px; }
+h3 { font-size: 17px; line-height: 1.5; margin-bottom: 7px; }
+.lead { max-width: 630px; color: var(--muted); font-size: 18px; line-height: 1.6; margin-bottom: 18px; }
+.updated { font-size: 12px; color: var(--muted); margin-bottom: 0; }
+.document-layout { display: grid; grid-template-columns: minmax(0, 1fr) 240px; column-gap: 68px; align-items: start; }
+.prose { min-width: 0; max-width: 700px; }
+.prose section + section { margin-top: 38px; }
+.prose p, .prose li { font-size: 15px; }
+.prose p { margin-bottom: 16px; }
+.prose p:last-child { margin-bottom: 0; }
+.prose ul, .prose ol { margin: 12px 0 16px; padding-left: 23px; }
+.prose li + li { margin-top: 9px; }
+.summary-card { padding: 25px; border: 1px solid var(--line); border-radius: 14px; background: var(--soft-green); margin-bottom: 32px; }
+.summary-card h2 { font-family: inherit; font-size: 16px; font-weight: 650; letter-spacing: 0; margin-bottom: 12px; }
+.summary-card ul { padding-left: 20px; margin: 0; }
+.summary-card p { margin-bottom: 0; }
+.side-note { background: var(--surface); border: 1px solid var(--line); padding: 25px; border-radius: 14px; }
+.side-note h2 { font-family: inherit; font-size: 13px; font-weight: 650; letter-spacing: 0; margin-bottom: 15px; }
+.side-note nav a { display: block; font-size: 13px; line-height: 1.4; padding: 8px 0; text-decoration: none; }
+.side-note nav a:hover { text-decoration: underline; }
+.side-note p { font-size: 13px; color: var(--muted); margin: 22px 0 0; }
+.card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.route-card { display: flex; flex-direction: column; padding: 30px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); text-decoration: none; min-height: 248px; }
+.route-card:hover { border-color: #7c9480; }
+.card-number { color: #647f6a; font-size: 12px; margin-bottom: 32px; }
+.route-card h2 { font-size: 26px; margin-bottom: 10px; }
+.route-card p { color: var(--muted); font-size: 14px; line-height: 1.6; flex: 1; }
+.card-action { font-size: 13px; font-weight: 600; }
+.home-note { margin-top: 30px; max-width: 660px; color: var(--muted); font-size: 14px; }
+.contact-card { padding: 30px; border-radius: 14px; background: var(--forest); color: var(--paper); margin-bottom: 34px; }
+.contact-card h2 { color: var(--paper); margin-bottom: 10px; }
+.contact-card p { color: #d4e1d3; }
+.email-link { color: var(--paper); font-size: clamp(17px, 2.2vw, 21px); font-weight: 550; overflow-wrap: anywhere; }
+.contact-card .fine-print { margin-top: 16px; font-size: 12px; }
+details { border-top: 1px solid var(--line); padding: 17px 0; }
+details:last-of-type { border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; font-weight: 600; font-size: 15px; }
+details p { padding-top: 14px; }
+.site-footer { display: flex; justify-content: space-between; gap: 24px; padding: 28px 0 38px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+.site-footer p { margin-bottom: 0; }
+.site-footer strong { color: var(--forest); font-weight: 600; }
+.site-footer a { align-self: flex-start; overflow-wrap: anywhere; }
+@media (max-width: 760px) {
+  .site-shell { width: calc(100% - 40px); }
+  .site-header { min-height: 100px; }
+  .brand { font-size: 20px; gap: 9px; }
+  .brand-mark { width: 34px; height: 34px; }
+  .main-nav { gap: 0; }
+  .main-nav a { padding: 7px 10px; font-size: 13px; }
+  .document-layout { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .side-note { order: -1; padding: 20px; }
+  .side-note nav { display: flex; flex-wrap: wrap; gap: 0 18px; }
+  .side-note p { margin-top: 12px; }
+  .card-grid { grid-template-columns: minmax(0, 1fr); }
+  .route-card { min-height: auto; padding: 25px; }
+  .card-number { margin-bottom: 20px; }
+  .page-heading { margin-top: 36px; margin-bottom: 32px; }
+  .site-footer { flex-direction: column; gap: 14px; }
+}
+@media (max-width: 440px) {
+  .site-header { align-items: flex-start; flex-direction: column; justify-content: center; gap: 12px; padding: 23px 0 16px; }
+  .main-nav { margin-left: -10px; }
+  .main-nav a { padding-inline: 14px; }
+  main { padding-top: 23px; padding-bottom: 50px; }
+  h1 { letter-spacing: -1.3px; }
+  .lead { font-size: 16px; }
+  .summary-card, .contact-card { padding: 23px; }
+}
+@media print {
+  body { background: white; }
+  .site-shell { width: 100%; }
+  .main-nav, .side-note, .skip-link { display: none; }
+  .site-header { min-height: 70px; }
+  .document-layout { display: block; }
+  .prose { max-width: none; }
+  .page-heading { margin-top: 24px; }
+  main { padding-bottom: 20px; }
+  h1 { font-size: 36px; }
+  h2 { break-after: avoid; }
+  .summary-card { break-inside: avoid; }
+  a { color: inherit; }
+}
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="PDF Scrollpacer home">
+        <svg class="brand-mark" viewBox="0 0 1000 1000" aria-hidden="true" focusable="false">
+          <rect width="1000" height="1000" rx="260" fill="#214F3F"/>
+          <path fill="#F7F1E3" fill-rule="evenodd" d="M328 190 H590 L730 342 Q736 348 736 358 V742 C736 777 708 806 672 806 H328 C293 806 264 777 264 742 V254 C264 219 293 190 328 190 Z M584 224 L705 353 H608 Q584 353 584 329 Z M361 333 H511 C524.25 333 535 343.75 535 357 C535 370.25 524.25 381 511 381 H361 C347.75 381 337 370.25 337 357 C337 343.75 347.75 333 361 333 Z M360 421 H640 C653.25 421 664 431.75 664 445 C664 458.25 653.25 469 640 469 H360 C346.75 469 336 458.25 336 445 C336 431.75 346.75 421 360 421 Z M448 519 L590 606 C607 616 607 636 590 646 L448 729 C434 737 419 727 419 713 V539 C419 523 433 511 448 519 Z"/>
+        </svg>
+        <span>PDF Scrollpacer</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="./privacy/index.html">Privacy</a>
+        <a href="./terms/index.html">Terms</a>
+        <a href="./support/index.html">Support</a>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">
+
+      <div class="page-heading">
+        <p class="eyebrow">Your reading space</p>
+        <h1>Reading, with room to breathe</h1>
+        <p class="lead">Privacy, terms, and help for your hands-free PDF reader.</p>
+        <p class="updated">Last updated 1 October 2026 · Effective 2026-10-01</p>
+      </div>
+      <div class="card-grid">
+  <a class="route-card" href="./privacy/index.html">
+    <span class="card-number" aria-hidden="true">01 / YOUR DATA</span>
+    <h2>Privacy Policy</h2>
+    <p>What stays on your device, what happens when you contact us, and your choices.</p>
+    <span class="card-action">Read our privacy policy <span aria-hidden="true">↗</span></span>
+  </a>
+  <a class="route-card" href="./terms/index.html">
+    <span class="card-number" aria-hidden="true">02 / USING THE APP</span>
+    <h2>Terms of Use</h2>
+    <p>Your documents, your responsibilities, and the terms for using PDF Scrollpacer.</p>
+    <span class="card-action">Read the terms <span aria-hidden="true">↗</span></span>
+  </a>
+  <a class="route-card" href="./support/index.html">
+    <span class="card-number" aria-hidden="true">03 / HERE TO HELP</span>
+    <h2>Support</h2>
+    <p>A few useful answers and a direct way to get in touch with the developer.</p>
+    <span class="card-action">Find some help <span aria-hidden="true">↗</span></span>
+  </a>
+</div>
+<p class="home-note">Your reading, at your pace. PDF Scrollpacer brings automatic scrolling, read-aloud and a local PDF library together. Find our privacy information, purchase terms and support details here.</p>
+
+    </main>
+    <footer class="site-footer">
+      <p><strong>PDF Scrollpacer</strong><br>Privacy, terms and support</p>
+      <a href="mailto:dev.pgsoftwarelabs@gmail.com">dev.pgsoftwarelabs@gmail.com</a>
+    </footer>
+  </div>
+</body>
+</html>

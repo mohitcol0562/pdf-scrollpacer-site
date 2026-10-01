@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173e33">
+  <meta name="description" content="Get help with your PDFs, reading settings, and local app data.">
+
+<link rel="canonical" href="https://mohitcol0562.github.io/pdf-scrollpacer-site/support/">
+  <title>A little help, when you need it · PDF Scrollpacer</title>
+  <style>:root {
+  color-scheme: light;
+  --paper: #f7f3e9;
+  --surface: #fdfbf6;
+  --forest: #173e33;
+  --ink: #243c33;
+  --muted: #536358;
+  --line: #d6ddd1;
+  --soft-green: #e8eddf;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: 24px; }
+body { margin: 0; background: var(--paper); color: var(--ink); line-height: 1.7; }
+a { color: var(--forest); text-underline-offset: 4px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, summary:focus-visible { outline: 3px solid #8b5229; outline-offset: 5px; border-radius: 3px; }
+.skip-link { position: absolute; top: 12px; left: 16px; padding: 10px 18px; background: var(--forest); color: white; z-index: 2; transform: translateY(-160%); }
+.skip-link:focus { transform: translateY(0); }
+.site-shell { width: min(1040px, calc(100% - 64px)); margin: 0 auto; }
+.site-header { min-height: 114px; display: flex; gap: 24px; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); }
+.brand { display: inline-flex; align-items: center; gap: 12px; font-size: 23px; font-weight: 650; letter-spacing: -.8px; text-decoration: none; }
+.brand-mark { width: 40px; height: 40px; flex: none; color: var(--forest); }
+.main-nav { display: flex; gap: 8px; flex-wrap: wrap; }
+.main-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 7px 15px; font-size: 14px; font-weight: 550; text-decoration: none; border-radius: 30px; }
+.main-nav a:hover, .main-nav a[aria-current="page"] { background: var(--soft-green); }
+main { padding-top: 30px; padding-bottom: 80px; }
+.draft-notice { display: flex; gap: 9px; align-items: center; width: fit-content; max-width: 100%; border: 1px solid #d8cbb0; background: #f5eddc; padding: 5px 12px; border-radius: 5px; color: #645133; font-size: 12px; }
+.status-dot { width: 6px; height: 6px; flex: none; background: #947042; border-radius: 50%; }
+.page-heading { margin-top: 44px; max-width: 760px; margin-bottom: 46px; }
+.eyebrow { margin: 0 0 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; font-size: 11px; font-weight: 650; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; color: var(--forest); }
+h1 { font-size: clamp(38px, 6vw, 60px); line-height: 1.12; letter-spacing: -2px; margin-bottom: 20px; }
+h2 { font-size: 28px; line-height: 1.3; letter-spacing: -.6px; margin-bottom: 14px; }
+h3 { font-size: 17px; line-height: 1.5; margin-bottom: 7px; }
+.lead { max-width: 630px; color: var(--muted); font-size: 18px; line-height: 1.6; margin-bottom: 18px; }
+.updated { font-size: 12px; color: var(--muted); margin-bottom: 0; }
+.document-layout { display: grid; grid-template-columns: minmax(0, 1fr) 240px; column-gap: 68px; align-items: start; }
+.prose { min-width: 0; max-width: 700px; }
+.prose section + section { margin-top: 38px; }
+.prose p, .prose li { font-size: 15px; }
+.prose p { margin-bottom: 16px; }
+.prose p:last-child { margin-bottom: 0; }
+.prose ul, .prose ol { margin: 12px 0 16px; padding-left: 23px; }
+.prose li + li { margin-top: 9px; }
+.summary-card { padding: 25px; border: 1px solid var(--line); border-radius: 14px; background: var(--soft-green); margin-bottom: 32px; }
+.summary-card h2 { font-family: inherit; font-size: 16px; font-weight: 650; letter-spacing: 0; margin-bottom: 12px; }
+.summary-card ul { padding-left: 20px; margin: 0; }
+.summary-card p { margin-bottom: 0; }
+.side-note { background: var(--surface); border: 1px solid var(--line); padding: 25px; border-radius: 14px; }
+.side-note h2 { font-family: inherit; font-size: 13px; font-weight: 650; letter-spacing: 0; margin-bottom: 15px; }
+.side-note nav a { display: block; font-size: 13px; line-height: 1.4; padding: 8px 0; text-decoration: none; }
+.side-note nav a:hover { text-decoration: underline; }
+.side-note p { font-size: 13px; color: var(--muted); margin: 22px 0 0; }
+.card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.route-card { display: flex; flex-direction: column; padding: 30px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); text-decoration: none; min-height: 248px; }
+.route-card:hover { border-color: #7c9480; }
+.card-number { color: #647f6a; font-size: 12px; margin-bottom: 32px; }
+.route-card h2 { font-size: 26px; margin-bottom: 10px; }
+.route-card p { color: var(--muted); font-size: 14px; line-height: 1.6; flex: 1; }
+.card-action { font-size: 13px; font-weight: 600; }
+.home-note { margin-top: 30px; max-width: 660px; color: var(--muted); font-size: 14px; }
+.contact-card { padding: 30px; border-radius: 14px; background: var(--forest); color: var(--paper); margin-bottom: 34px; }
+.contact-card h2 { color: var(--paper); margin-bottom: 10px; }
+.contact-card p { color: #d4e1d3; }
+.email-link { color: var(--paper); font-size: clamp(17px, 2.2vw, 21px); font-weight: 550; overflow-wrap: anywhere; }
+.contact-card .fine-print { margin-top: 16px; font-size: 12px; }
+details { border-top: 1px solid var(--line); padding: 17px 0; }
+details:last-of-type { border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; font-weight: 600; font-size: 15px; }
+details p { padding-top: 14px; }
+.site-footer { display: flex; justify-content: space-between; gap: 24px; padding: 28px 0 38px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+.site-footer p { margin-bottom: 0; }
+.site-footer strong { color: var(--forest); font-weight: 600; }
+.site-footer a { align-self: flex-start; overflow-wrap: anywhere; }
+@media (max-width: 760px) {
+  .site-shell { width: calc(100% - 40px); }
+  .site-header { min-height: 100px; }
+  .brand { font-size: 20px; gap: 9px; }
+  .brand-mark { width: 34px; height: 34px; }
+  .main-nav { gap: 0; }
+  .main-nav a { padding: 7px 10px; font-size: 13px; }
+  .document-layout { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .side-note { order: -1; padding: 20px; }
+  .side-note nav { display: flex; flex-wrap: wrap; gap: 0 18px; }
+  .side-note p { margin-top: 12px; }
+  .card-grid { grid-template-columns: minmax(0, 1fr); }
+  .route-card { min-height: auto; padding: 25px; }
+  .card-number { margin-bottom: 20px; }
+  .page-heading { margin-top: 36px; margin-bottom: 32px; }
+  .site-footer { flex-direction: column; gap: 14px; }
+}
+@media (max-width: 440px) {
+  .site-header { align-items: flex-start; flex-direction: column; justify-content: center; gap: 12px; padding: 23px 0 16px; }
+  .main-nav { margin-left: -10px; }
+  .main-nav a { padding-inline: 14px; }
+  main { padding-top: 23px; padding-bottom: 50px; }
+  h1 { letter-spacing: -1.3px; }
+  .lead { font-size: 16px; }
+  .summary-card, .contact-card { padding: 23px; }
+}
+@media print {
+  body { background: white; }
+  .site-shell { width: 100%; }
+  .main-nav, .side-note, .skip-link { display: none; }
+  .site-header { min-height: 70px; }
+  .document-layout { display: block; }
+  .prose { max-width: none; }
+  .page-heading { margin-top: 24px; }
+  main { padding-bottom: 20px; }
+  h1 { font-size: 36px; }
+  h2 { break-after: avoid; }
+  .summary-card { break-inside: avoid; }
+  a { color: inherit; }
+}
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="PDF Scrollpacer home">
+        <svg class="brand-mark" viewBox="0 0 1000 1000" aria-hidden="true" focusable="false">
+          <rect width="1000" height="1000" rx="260" fill="#214F3F"/>
+          <path fill="#F7F1E3" fill-rule="evenodd" d="M328 190 H590 L730 342 Q736 348 736 358 V742 C736 777 708 806 672 806 H328 C293 806 264 777 264 742 V254 C264 219 293 190 328 190 Z M584 224 L705 353 H608 Q584 353 584 329 Z M361 333 H511 C524.25 333 535 343.75 535 357 C535 370.25 524.25 381 511 381 H361 C347.75 381 337 370.25 337 357 C337 343.75 347.75 333 361 333 Z M360 421 H640 C653.25 421 664 431.75 664 445 C664 458.25 653.25 469 640 469 H360 C346.75 469 336 458.25 336 445 C336 431.75 346.75 421 360 421 Z M448 519 L590 606 C607 616 607 636 590 646 L448 729 C434 737 419 727 419 713 V539 C419 523 433 511 448 519 Z"/>
+        </svg>
+        <span>PDF Scrollpacer</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="../privacy/index.html">Privacy</a>
+        <a href="../terms/index.html">Terms</a>
+        <a href="../support/index.html" aria-current="page">Support</a>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">
+
+      <div class="page-heading">
+        <p class="eyebrow">Your reading space</p>
+        <h1>A little help, when you need it</h1>
+        <p class="lead">Get help with your PDFs, reading settings, and local app data.</p>
+        <p class="updated">Last updated 1 October 2026 · Effective 2026-10-01</p>
+      </div>
+      <div class="document-layout">
+  <article class="prose" aria-label="App support">
+    <div class="contact-card">
+      <h2>Talk to the developer</h2>
+      <p>Have a question, found a problem, or have an idea for PDF Scrollpacer? Send an email.</p>
+      <a class="email-link" href="mailto:dev.pgsoftwarelabs@gmail.com">dev.pgsoftwarelabs@gmail.com</a>
+      <p class="fine-print">This opens your email app. A response time is not guaranteed.</p>
+    </div>
+    <section id="getting-help">
+      <h2>Help us understand what happened</h2>
+      <p>For a bug report, please include:</p>
+      <ul>
+        <li>Your device model, operating system version, and PDF Scrollpacer version, if available.</li>
+        <li>The steps that led to the issue and what you expected to happen.</li>
+        <li>Whether it affects one PDF or several, and whether the file comes from device storage or another provider.</li>
+        <li>An optional screenshot with personal information removed.</li>
+      </ul>
+      <p>Please do not send passwords, sensitive documents, or a full PDF unless a suitable, non-sensitive sample is needed to investigate. Email and attachments are processed by the email services involved. Read our <a href="../privacy/index.html">Privacy Policy</a> for more information.</p>
+    </section>
+    <section id="common-questions">
+      <h2>A few common questions</h2>
+      <details open>
+        <summary>Why can’t the app reopen my PDF?</summary>
+        <p>Android keeps a reference to the file you selected. If that file has moved, been deleted, or become unavailable from its provider, you may need to restore access or select it again. For a cloud provider, check that its app is available and signed in. On iOS, a successfully imported PDF has a private local copy; if that copy is unavailable, import the original again. Keep a separate copy of important PDFs.</p>
+      </details>
+      <details>
+        <summary>Why is some text missing or unavailable?</summary>
+        <p>Some PDFs contain scanned page images, unusual layouts, or restricted text. The iOS implementation can recognize scanned pages on device, but recognition can make mistakes or be unavailable for a language or layout. Check the original page when accuracy matters. If you report an issue, describe the PDF’s source and whether it is a scan; you do not need to send the document.</p>
+      </details>
+      <details>
+        <summary>What happens to an unfinished camera scan?</summary>
+        <p>On supported iOS devices, choose the scan action and allow camera access. Review the pages before saving. Captured drafts remain in app storage so you can recover or retry an interrupted scan. Discard an unwanted draft when finished. A successful save adds a local PDF and removes the draft image/export copies, keeping a small record to prevent duplicate saves. Drafts can be included in normal device backups. No photo-library or microphone permission is needed.</p>
+      </details>
+      <details>
+        <summary>Why is read-aloud unavailable or using a different pronunciation?</summary>
+        <p>The iOS reader uses eligible installed Apple voices. Choose an available voice in the reader's voice settings, check the audio output and volume, and make sure the page has readable or recognized text. The app does not download voices or use a cloud speech service. Pronunciation substitutions can help with names and abbreviations; review the original text if a reading sounds wrong. Calls, audio interruptions and unplugging an audio device can pause playback; resume explicitly when ready.</p>
+      </details>
+      <details>
+        <summary>How do I remove my local app data?</summary>
+        <p>Use Android Settings to find PDF Scrollpacer under Apps, then choose its storage settings and clear storage or app data. Labels vary by device. Uninstalling also removes app-local data. This removes local library records, settings, progress, annotations, and cached data, so preserve anything important first. On iOS, delete the app to remove its local container; offloading may preserve documents and data. Manage device backups separately. These actions do not delete original PDFs or images held separately by a file provider.</p>
+        <p>The iOS access-verification cache uses separate device-only Keychain storage and may remain after deletion. Deleting the app does not cancel a subscription or delete store purchase history. Manage subscriptions through your Apple Account.</p>
+      </details>
+      <details>
+        <summary>Can the developer recover my reading data?</summary>
+        <p>The app has no account or developer-operated cloud backup. We cannot recover a local library, progress, or annotations after that app data has been removed. Copies held by a source provider remain subject to that provider’s own recovery options.</p>
+      </details>
+      <details>
+        <summary>When does the subscription trial start, and what happens when it ends?</summary>
+        <p>If a trial is offered to you, the store shows its length and the price afterwards before you confirm the annual subscription. The subscription renews at the annual price shown unless cancelled before renewal. Opening or importing a PDF does not start a trial. Trial eligibility and access are verified through the store and RevenueCat. Lifetime is a separate one-time purchase. Manual reading, accessibility, search, bookmarks, highlights and goals remain available without Pro.</p>
+      </details>
+      <details>
+        <summary>Why are purchase plans unavailable?</summary>
+        <p>Check your internet connection and store account, then try again. Available products and prices depend on your store and region. If plans remain unavailable, contact support with your app version and the message shown. Opening a PDF does not activate a trial or paid access.</p>
+      </details>
+      <details>
+        <summary>How do I restore, cancel or request a refund?</summary>
+        <p>Open the app's billing settings and choose Restore Purchases while signed in to the appropriate Apple Account. Pending approval is not completed Pro access. Annual subscriptions renew until cancelled; the lifetime product is a one-time purchase. Follow <a href="https://support.apple.com/en-us/118428">Apple's subscription cancellation instructions</a> or <a href="https://support.apple.com/en-us/118223">request a refund from Apple</a>. Deleting the app does not cancel a subscription.</p>
+      </details>
+      <details>
+        <summary>Why does paid access ask me to connect or check my clock?</summary>
+        <p>The app keeps verified paid access for up to seven days offline, capped earlier by the subscription or active grace-period expiration. Reconnect and refresh access when needed. Keep the device's date and time correct: a significant backwards clock change requires verification, and a large forward change can invalidate cached access. Reinstalling does not reset store trial eligibility. You can continue reading manually if access cannot be verified.</p>
+      </details>
+      <details>
+        <summary>Does this information cover an iPhone app?</summary>
+        <p>Yes. The privacy policy and terms cover iPhone, iPad and Android. Features and file handling can differ by platform; include your device and operating system version when asking for help.</p>
+      </details>
+    </section>
+    <section id="privacy-requests">
+      <h2>Privacy questions</h2>
+      <p>To ask about information you sent to support, or request access, correction, or deletion, email <a href="mailto:dev.pgsoftwarelabs@gmail.com">dev.pgsoftwarelabs@gmail.com</a>. Please describe your request without attaching identity documents or unrelated sensitive information.</p>
+    </section>
+  </article>
+  <aside class="side-note">
+    <h2>On this page</h2>
+    <nav aria-label="Support page sections">
+      <a href="#getting-help">Reporting an issue</a>
+      <a href="#common-questions">Common questions</a>
+      <a href="#privacy-requests">Privacy questions</a>
+    </nav>
+    <p>Support for Android, iPhone and iPad. Please include your device and app version when reporting a problem.</p>
+  </aside>
+</div>
+
+    </main>
+    <footer class="site-footer">
+      <p><strong>PDF Scrollpacer</strong><br>Privacy, terms and support</p>
+      <a href="mailto:dev.pgsoftwarelabs@gmail.com">dev.pgsoftwarelabs@gmail.com</a>
+    </footer>
+  </div>
+</body>
+</html>
